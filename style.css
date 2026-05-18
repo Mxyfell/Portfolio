@@ -17,8 +17,12 @@
     width: 260px;
     max-width: 100%;
     height: auto;
+    transition: transform 0.3s ease;
+    transform-origin: center;
 }
-
+.about-row img:hover {
+    transform: scale(1.05);
+}
 .about-text p {
     flex: 1;
     min-width: 200px;
