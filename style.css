@@ -8,31 +8,25 @@
 
 .about-row {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 24px;
     flex-wrap: wrap;
 }
 
 .about-row img {
-    width: 360px;
+    width: 260px;
     max-width: 100%;
-    border-radius: 16px;
-    object-fit: cover;
+    height: auto;
 }
 
 .about-text p {
-    margin: 0 0 16px;
-    line-height: 1.6;
-    font-size: 1rem;
+    flex: 1;
+    min-width: 200px;
 }
 
 @media (max-width: 720px) {
     .about-row {
         flex-direction: column;
         text-align: left;
-    }
-
-    .about-row img {
-        width: 100%;
     }
 }
