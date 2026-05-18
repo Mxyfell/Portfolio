@@ -1,9 +1,10 @@
+body {
+  background-color: #2e0808;
+  margin: 0;
+}
 .portfolio {
-    background-color: #f74646;
     padding: 20px;
-    border-radius: 10px;
     max-width: 1100px;
-    margin: 20px auto;
 }
 
 .about-row {
