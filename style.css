@@ -1,7 +1,7 @@
 body {
   background-color: #2e0808;
   margin: 0;
-  font-family: "FLOPPYFFONT", bold;
+  font-family: "FLOPPYFFONT", sans-serif;
 }
 .portfolio {
     padding: 20px;
@@ -35,7 +35,7 @@ body {
 .about-image img:hover {
     transform: scale(1.05);
 }
-.about-text p {
+.about-text {
     flex: 1;
     min-width: 0;
 }
@@ -48,7 +48,7 @@ body {
 }
 @font-face {
     font-family: "FLOPPYFFONT";
-    src: url(SITEFONT.otf) format("opentype");
+    src: url("SITEFONT.otf") format("opentype");
     font-weight: normal;
     font-style: normal;
     font-display: swap ;
