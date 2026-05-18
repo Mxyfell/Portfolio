@@ -1,6 +1,7 @@
 body {
   background-color: #2e0808;
   margin: 0;
+  font-family: "FLOPPYFFONT", bold;
 }
 .portfolio {
     padding: 20px;
@@ -44,4 +45,11 @@ body {
         flex-direction: column;
         text-align: left;
     }
+}
+@font-face {
+    font-family: "FLOPPYFFONT";
+    src: url(SITEFONT.otf) format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap ;
 }
