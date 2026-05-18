@@ -13,14 +13,19 @@
     flex-wrap: wrap;
 }
 
-.about-row img {
+.about-image {
     width: 260px;
-    max-width: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.about-image img {
+    display: block;
+    width: 100%;
     height: auto;
     transition: transform 0.3s ease;
-    transform-origin: center;
 }
-.about-row img:hover {
+.about-image img:hover {
     transform: scale(1.05);
 }
 .about-text p {
