@@ -2,4 +2,37 @@
     background-color: #f74646;
     padding: 20px;
     border-radius: 10px;
+    max-width: 1100px;
+    margin: 20px auto;
+}
+
+.about-row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.about-row img {
+    width: 360px;
+    max-width: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+.about-text p {
+    margin: 0 0 16px;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+@media (max-width: 720px) {
+    .about-row {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .about-row img {
+        width: 100%;
+    }
 }
