@@ -6,6 +6,17 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="imgs/SGENOV.png">
     <script src="script.js" defer></script>
+    <script src="https://unpkg.com/@discord/embedded-app-sdk"></script>
+    <script>
+        const discordSdk = new window.discordSdk.DiscordSDK("ТВОЙ_CLIENT_ID_БОТА");
+
+        async function setupDiscord() {
+            await discordSdk.ready();
+            console.log("Sgenov Activity готова!");
+        }
+
+        setupDiscord();
+    </script>
 </head>
 <body>
     <section class="portfolio">
