@@ -1,69 +1,260 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COOL MXYFELL SITE</title>
+    <title>Xoxoxo</title>
+    <meta name="description" content="Portfolio of Max (Mxyfell) — 15 y.o. developer, Unity creator, music producer & bot engineer.">
+    <meta property="og:title" content="MXYFELL — Portfolio">
+    <meta property="og:description" content="Unity Games, Music, Telegram Bots, Game Mods and DEPO Steam Developer by Max (Mxyfell).">
+    <meta property="og:image" content="imgs/SGENOV.png">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#c9443c">
+
+    <link rel="icon" href="imgs/SGENOV.png" type="image/png">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="imgs/SGENOV.png">
-    <script src="script.js" defer></script>
+    
     <script src="https://unpkg.com/@discord/embedded-app-sdk"></script>
-    <script>
-        const discordSdk = new window.discordSdk.DiscordSDK("ТВОЙ_CLIENT_ID_БОТА");
-
-        async function setupDiscord() {
-            await discordSdk.ready();
-            console.log("Sgenov Activity готова!");
-        }
-
-        setupDiscord();
-    </script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <section class="portfolio">
-        <h1>ABOUT ME</h1>
-        <div class="about-row">
-            <div class="about-image">
-                <img src="imgs/SGENOV.png" alt="SGENOV">
+
+    <div class="bg-glow-orb bg-glow-1"></div>
+    <div class="bg-glow-orb bg-glow-2"></div>
+    <div class="bg-glow-orb bg-glow-3"></div>
+
+    <canvas id="space-canvas"></canvas>
+
+    <header class="navbar">
+        <a href="#about" class="nav-brand">
+            <img src="imgs/SGENOV.png" alt="Mxyfell Avatar" class="nav-avatar">
+            <span class="nav-name">MXYFELL</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="#about" class="nav-link">ABOUT</a>
+            <a href="#projects" class="nav-link">PROJECTS</a>
+            <a href="#contact" class="nav-link">CONNECT</a>
+        </nav>
+
+        <div class="nav-controls">
+            <div class="status-badge" title="Current status">
+                <span class="status-dot"></span>
+                <span>ONLINE</span>
             </div>
-            <div class="about-text">
-                <p>Hi there, my name is Max, I'm from russia, I'm 15 years old.</p>
-                <p>I love coding and dabbling in music, right now, I'm working on a few projects and posting my work online.</p>
-            </div>
+            <button class="audio-toggle-btn" id="audio-toggle" title="Toggle Sound FX" aria-label="Toggle Sound FX">🔊</button>
         </div>
-            <div class="projs-row">
-                <h1>MY PROJECTS</h1>
+    </header>
+
+    <main class="portfolio">
+        <section id="about">
+            <h1>ABOUT ME</h1>
+            <p class="section-caption">CREATOR • DEVELOPER • MUSICIAN</p>
+
+            <div class="about-row">
+                <div class="about-image" id="about-image">
+                    <img src="imgs/SGENOV.png" alt="Max (Mxyfell) Avatar">
+                </div>
+
+                <div class="about-text">
+                    <div class="about-badge">
+                        <span>⚡</span>
+                        <span>MXYFELL</span>
+                    </div>
+                    <p>
+                        Hi there, my name is <strong>Max</strong>, I'm from Russia, and I'm <strong>16 years old</strong>.
+                    </p>
+                    <p>
+                        I love coding games, developing custom bots, and making original music. Currently working on indie projects and helping develop <strong>DEPO</strong> on Steam!
+                    </p>
+
+                    <div class="skills-pills">
+                        <span class="skill-pill">🎮 Unity 3D</span>
+                        <span class="skill-pill">⚡ C#</span>
+                        <span class="skill-pill">🚀 DEPO Steam Dev</span>
+                        <span class="skill-pill">🛠️ Game Modding</span>
+                        <span class="skill-pill">🎧 FL Studio</span>
+                        <span class="skill-pill">🤖 Telegram Bot API</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projs-row" id="projects">
+            <h1>MY PROJECTS</h1>
+            <p class="section-caption">Things I've built, developed, and composed</p>
+
+            <div class="proj-slider-wrapper">
                 <div class="proj-slider">
-                    <article class="proj-item">
-                        <h2>DEPO MODS</h2>
-                        <p>You can see my first coding attempts on this page, my mods were made by BIBer</p>
-                        <a class="proj-link" href="https://thunderstore.io/c/depo/" target="_blank" rel="noreferrer">See more</a>
+                    <div class="proj-spacer"></div>
+
+                    <article class="proj-item proj-item-highlight">
+                        <div class="proj-header">
+                            <span class="proj-category">STEAM DEV</span>
+                            <span class="proj-icon-tag">🚀</span>
+                        </div>
+                        <h2>DEPO</h2>
+                        <p>
+                            Stepped up from modding to officially helping develop DEPO on Steam! Continuing the game's updates and journey.
+                        </p>
+                        <div class="proj-quote">
+                            "From now on, Mxyfell will take over the development of DEPO. I fully trust him..." — Guiliam.
+                        </div>
+                        <div class="proj-tags">
+                            <span>Steam</span>
+                            <span>Unity / C#</span>
+                            <span>Official Dev</span>
+                        </div>
+                        <div class="proj-actions">
+                            <a class="proj-link" href="https://store.steampowered.com/app/1091320/DEPO_Death_Epileptic_Pixel_Origins/" target="_blank" rel="noreferrer">
+                                <span>Steam Page</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                            </a>
+                        </div>
                     </article>
+
                     <article class="proj-item">
-                    <h2>MUSIC</h2>
-                    <p>I also make music! You can listen to my tracks on Spotify</p>
-                    <a class="proj-link" href="https://open.spotify.com/artist/6Sgr8Be1E7BBIQuGQa7XUr" target="_blank" rel="noreferrer">See more</a>
-                </article>
-                <article class="proj-item">
-                    <h2>TELEGRAM BOT</h2>
-                    <p>Currently, I'm working on my own bot assistant, you can try it too!</p>
-                    <a class="proj-link" href="https://t.me/Sgenov_bot" target="_blank" rel="noreferrer">See more</a>
-                </article>
-                <article class="proj-item">
-                    <h2>UNITY GAME</h2>
-                    <p>I also make time for my game called NODE; the devlog is available on my YouTube channel!</p>
-                    <a class="proj-link" href="https://www.youtube.com/watch?v=cNrX0LtJlDg&list=PLEy2pGL5ioadHU4kuuOOqrlkVXDhz5Oqk" target="_blank" rel="noreferrer">See more</a>
-                </article>
+                        <div class="proj-header">
+                            <span class="proj-category">MODDING</span>
+                            <span class="proj-icon-tag">🛠️</span>
+                        </div>
+                        <h2>DEPO MODS</h2>
+                        <p>
+                            My first coding attempts and custom modifications for the game DEPO. Created together with BIBer on Thunderstore.
+                        </p>
+                        <div class="proj-tags">
+                            <span>C#</span>
+                            <span>BepInEx</span>
+                            <span>Thunderstore</span>
+                        </div>
+                        <div class="proj-actions">
+                            <a class="proj-link" href="https://thunderstore.io/c/depo/" target="_blank" rel="noreferrer">
+                                <span>See more</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="proj-item">
+                        <div class="proj-header">
+                            <span class="proj-category">MUSIC</span>
+                            <span class="proj-icon-tag">🎵</span>
+                        </div>
+                        <h2>MUSIC</h2>
+                        <p>
+                            I also make music! Original electronic and atmospheric tracks. You can listen to all my releases on Spotify.
+                        </p>
+                        <div class="proj-tags">
+                            <span>FL Studio</span>
+                            <span>Tracks</span>
+                            <span>Spotify</span>
+                        </div>
+                        <div class="proj-actions">
+                            <a class="proj-link" href="https://open.spotify.com/artist/6Sgr8Be1E7BBIQuGQa7XUr" target="_blank" rel="noreferrer">
+                                <span>Listen on Spotify</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="proj-item">
+                        <div class="proj-header">
+                            <span class="proj-category">BOT</span>
+                            <span class="proj-icon-tag">🤖</span>
+                        </div>
+                        <h2>TELEGRAM BOT</h2>
+                        <p>
+                            Currently working on my own bot assistant (@Sgenov_bot) featuring automated utilities and tools. You can try it too!
+                        </p>
+                        <div class="proj-tags">
+                            <span>Telegram API</span>
+                            <span>Automation</span>
+                            <span>Bot</span>
+                        </div>
+                        <div class="proj-actions">
+                            <a class="proj-link" href="https://t.me/Sgenov_bot" target="_blank" rel="noreferrer">
+                                <span>Try @Sgenov_bot</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="proj-item">
+                        <div class="proj-header">
+                            <span class="proj-category">GAME DEV</span>
+                            <span class="proj-icon-tag">🕹️</span>
+                        </div>
+                        <h2>NODE (UNITY)</h2>
+                        <p>
+                            I also make time for my indie game called NODE. The devlog series is available on my YouTube channel!
+                        </p>
+                        <div class="proj-tags">
+                            <span>Unity 3D</span>
+                            <span>C#</span>
+                            <span>YouTube Devlog</span>
+                        </div>
+                        <div class="proj-actions">
+                            <a class="proj-link" href="https://www.youtube.com/watch?v=cNrX0LtJlDg&list=PLEy2pGL5ioadHU4kuuOOqrlkVXDhz5Oqk" target="_blank" rel="noreferrer">
+                                <span>Watch Devlog</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <div class="proj-spacer"></div>
+                </div>
             </div>
-        </div>
+        </section>
+
         <hr class="divider">
-        <footer class="contact">
+
+        <footer class="contact" id="contact">
             <h1>CONNECT WITH ME!</h1>
+            <p class="section-caption">Reach out, play games together, or chat about music & code</p>
+
             <div class="socials">
-                <a href="https://steamcommunity.com/id/mxyfell/" target="_blank" rel="noreferrer"><img class="icon" src="imgs/steam.png" alt="steam"></a>
-                <a href="https://discord.gg/BdDnvZMS35" target="_blank" rel="noreferrer"><img class="icon" src="imgs/discord.png" alt="discord"></a>
-                <a href="https://twitter.com/Mxyfell" target="_blank" rel="noreferrer"><img class="icon" src="imgs/Xlogo.png" alt="X"></a>
+                <a class="social-card" href="https://steamcommunity.com/id/mxyfell/" target="_blank" rel="noreferrer">
+                    <img class="icon" src="imgs/steam.png" alt="Steam">
+                    <div class="social-meta">
+                        <span class="social-name">STEAM</span>
+                        <span class="social-handle">mxyfell</span>
+                    </div>
+                    <span class="social-arrow">↗</span>
+                </a>
+
+                <a class="social-card" href="https://twitter.com/Mxyfell" target="_blank" rel="noreferrer">
+                    <img class="icon" src="imgs/Xlogo.png" alt="X / Twitter">
+                    <div class="social-meta">
+                        <span class="social-name">X (TWITTER)</span>
+                        <span class="social-handle">@Mxyfell</span>
+                    </div>
+                    <span class="social-arrow">↗</span>
+                </a>
+
+                <a class="social-card" href="https://t.me/Sgenov_bot" target="_blank" rel="noreferrer">
+                    <svg class="icon" viewBox="0 0 24 24" fill="#c9443c" style="padding: 4px;">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.77-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .37z"/>
+                    </svg>
+                    <div class="social-meta">
+                        <span class="social-name">TELEGRAM</span>
+                        <span class="social-handle">@Sgenov_bot</span>
+                    </div>
+                    <span class="social-arrow">↗</span>
+                </a>
             </div>
         </footer>
-    </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-copy">Crafted with <span>❤️</span> by Mxyfell</p>
+            <button class="back-to-top-btn" id="back-to-top" title="Back to top" aria-label="Back to top">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+            </button>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast">Notification</div>
+
 </body>
 </html>
